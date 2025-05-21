@@ -9,7 +9,7 @@ import { render } from "astro:content";
 
 // get all static paths for authors
 export async function getStaticPaths() {
-  const COLLECTION_FOLDER = "authors";
+  const COLLECTION_FOLDER = "players";
   const authors = await getSinglePage(COLLECTION_FOLDER);
 
   const paths = authors.map((author) => ({

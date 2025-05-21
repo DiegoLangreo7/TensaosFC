@@ -6,11 +6,11 @@
     },
     {
           "name": "Jugadores",
-          "url": "/authors"
+          "url": "/players"
     },
     {
           "name": "Partidos",
-          "url": "/authors"
+          "url": "/matches"
     },
     {
       "name": "Sobre nosotros",
@@ -19,7 +19,7 @@
   ],
   "footer": [
     {
-      "name": "Privacy Policy",
+      "name": "Politica de privacidad",
       "url": "/privacy-policy"
     }
   ]
