@@ -61,22 +61,26 @@ const homepageCollection = defineCollection({
   }),
 });
 
-// Sponsors collection schema
+// después de aboutCollection…
 const sponsorsCollection = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/sponsors" }),
   schema: z.object({
-    name:    z.string(),
-    logo:    z.string(),
-    website: z.string().url()
+    title:      z.string().optional(),
+    meta_title: z.string().optional(),
+    description:z.string().optional(),
+    image:      z.string().optional(),
+    name:       z.string().optional(),
+    logo:       z.string().optional(),
+    website:    z.string().url().optional(),
+    draft:      z.boolean().optional(),
   }),
 });
 
-// Export collections
 export const collections = {
-  // Pages
   homepage: homepageCollection,
-  players: playersCollection,
-  pages: pagesCollection,
-  about: aboutCollection,
-  sponsors: sponsorsCollection
+  players:  playersCollection,
+  pages:    pagesCollection,
+  about:    aboutCollection,
+ sponsors: sponsorsCollection
 };
+

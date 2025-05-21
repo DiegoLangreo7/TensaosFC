@@ -1,10 +1,14 @@
 ---
+// src/components/SponsorCard.astro
 export interface Props {
-  name: string;
-  logo: string;
-  website: string;
+  data: {
+    name:    string;
+    logo:    string;
+    website: string;
+  };
 }
-const { name, logo, website } = Astro.props as Props;
+const { data } = Astro.props as Props;
+const { name, logo, website } = data;
 ---
 
 <a

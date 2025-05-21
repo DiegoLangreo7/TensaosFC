@@ -1,33 +1,31 @@
 ---
-import Base from "@/layouts/Base.astro";
-import type { CollectionEntry } from "astro:content";
-import { getCollection } from "astro:content";
 import SponsorCard from "@/components/SponsorCard.astro";
+import Base from "@/layouts/Base.astro";
+import PageHeader from "@/partials/PageHeader.astro";
+import { getSinglePage } from "@/lib/contentParser.astro";
+import { getEntry, type CollectionEntry } from "astro:content";
 
-interface Sponsor {
-  name: string;
-  logo: string;
-  website: string;
-}
-
-const sponsors = (await getCollection("sponsors")) as CollectionEntry<"sponsors">[];
+const COLLECTION_FOLDER = "sponsors";
+const sponsorIndex = (await getEntry(
+  COLLECTION_FOLDER,
+  "-index"
+)) as CollectionEntry<"sponsors">;
+const sponsors = await getSinglePage(COLLECTION_FOLDER);
 ---
 
-<Base title="Patrocinadores" meta_title="Nuestros Patrocinadores">
-  <section class="section-sm">
+<Base
+  title={sponsorIndex.data.title}
+  meta_title={sponsorIndex.data.meta_title}
+>
+  <PageHeader title={sponsorIndex.data.title} />
+  <section class="section-sm pb-0">
     <div class="container">
-      <h2 class="text-h2 mb-8 text-center">Patrocinadores</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {sponsors.map((entry) => {
-          const data = entry.data as Sponsor;
-          return (
-            <SponsorCard
-              name={data.name}
-              logo={data.logo}
-              website={data.website}
-            />
-          );
-        })}
+      <div class="row justify-center">
+        {sponsors.map((sponsor) => (
+          <div class="mb-14 md:col-6 lg:col-4">
+            <SponsorCard data={sponsor.data} />
+          </div>
+        ))}
       </div>
     </div>
   </section>

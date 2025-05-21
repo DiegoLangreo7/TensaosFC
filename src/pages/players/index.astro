@@ -14,7 +14,7 @@ const authorIndex = (await getEntry(
 const authors = await getSinglePage(COLLECTION_FOLDER);
 ---
 
-<Base title={authorIndex.data.title}>
+<Base title={authorIndex.data.title} meta_title={authorIndex.data.meta_title}>
   <PageHeader title={authorIndex.data.title} />
   <section class="section-sm pb-0">
     <div class="container">
