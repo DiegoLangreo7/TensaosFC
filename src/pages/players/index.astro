@@ -5,12 +5,12 @@ import { getSinglePage } from "@/lib/contentParser.astro";
 import PageHeader from "@/partials/PageHeader.astro";
 import { getEntry, type CollectionEntry } from "astro:content";
 
-const COLLECTION_FOLDER = "authors";
+const COLLECTION_FOLDER = "players";
 
 const authorIndex = (await getEntry(
   COLLECTION_FOLDER,
   "-index"
-)) as CollectionEntry<"authors">;
+)) as CollectionEntry<"players">;
 const authors = await getSinglePage(COLLECTION_FOLDER);
 ---
 
