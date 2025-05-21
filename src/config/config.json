@@ -27,12 +27,6 @@
     "copyright": "Developed by [DiegoLangreo7](https://github.com/DiegoLangreo7)"
   },
 
-  "navigation_button": {
-    "enable": true,
-    "label": "Get Started",
-    "link": "https://github.com/zeon-studio/astroplate"
-  },
-
   "google_tag_manager": {
     "enable": false,
     "gtm_id": "GTM-XXXXXX"
