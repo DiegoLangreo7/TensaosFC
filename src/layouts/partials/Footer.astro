@@ -1,22 +1,9 @@
 ---
-import Social from "@/components/Social.astro";
 import config from "@/config/config.json";
-import social from "@/config/social.json";
 import { markdownify } from "@/lib/utils/textConverter";
 ---
 
 <footer class="bg-light dark:bg-darkmode-light">
-  <div class="container">
-    <div class="row items-center py-4">
-      <!-- (En caso de no querer ningún enlace, borramos todo el bloque de links) -->
-
-      <!-- Social icons -->
-      <div class="mb-6 text-center lg:text-right lg:col-12 lg:mb-0">
-        <Social source={social.main} className="social-icons" />
-      </div>
-    </div>
-  </div>
-
   <div class="border-t border-border py-4 dark:border-darkmode-border">
     <div class="container text-center text-text-light dark:text-darkmode-text-light">
       <p set:html={markdownify(config.params.copyright)} />

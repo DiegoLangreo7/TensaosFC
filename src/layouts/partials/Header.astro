@@ -1,7 +1,9 @@
 ---
 import Logo from "@/components/Logo.astro";
 import ThemeSwitcher from "@/components/ThemeSwitcher.astro";
+import Social from "@/components/Social.astro";
 import config from "@/config/config.json";
+import social from "@/config/social.json";
 import menu from "@/config/menu.json";
 
 export interface ChildNavigationLink {
@@ -23,12 +25,10 @@ const { pathname } = Astro.url;
 
 <header class={`header z-30 ${settings.sticky_header && "sticky top-0"}`}>
   <nav class="navbar container">
-    <!-- logo -->
     <div class="order-0">
       <Logo />
     </div>
 
-    <!-- navbar toggler -->
     <input id="nav-toggle" type="checkbox" class="hidden" />
     <label
       for="nav-toggle"
@@ -46,7 +46,6 @@ const { pathname } = Astro.url;
         />
       </svg>
     </label>
-    <!-- /navbar toggler -->
 
     <ul
       id="nav-menu"
@@ -59,7 +58,9 @@ const { pathname } = Astro.url;
               <span
                 class={`nav-link inline-flex items-center ${
                   menu.children?.map(({ url }) => url).includes(pathname) ||
-                  menu.children?.map(({ url }) => `${url}/`).includes(pathname)
+                  menu.children
+                    ?.map(({ url }) => `${url}/`)
+                    .includes(pathname)
                     ? "active"
                     : ""
                 }`}
@@ -69,16 +70,16 @@ const { pathname } = Astro.url;
                   <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                 </svg>
               </span>
-              <ul
-                class="nav-dropdown-list hidden group-hover:block lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100"
-              >
+              <ul class="nav-dropdown-list hidden group-hover:block lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100">
                 {menu.children?.map((child) => (
                   <li class="nav-dropdown-item">
                     <a
                       href={child.url}
                       aria-label={child.name}
                       class={`nav-dropdown-link block ${
-                        (pathname === `${child.url}/` || pathname === child.url) && "active"
+                        (pathname === `${child.url}/` ||
+                          pathname === child.url) &&
+                        "active"
                       }`}
                     >
                       {child.name}
@@ -92,7 +93,8 @@ const { pathname } = Astro.url;
               <a
                 href={menu.url}
                 class={`nav-link block ${
-                  (pathname === `${menu.url}/` || pathname === menu.url) && "active"
+                  (pathname === `${menu.url}/` || pathname === menu.url) &&
+                  "active"
                 }`}
               >
                 {menu.name}
@@ -103,8 +105,12 @@ const { pathname } = Astro.url;
       ))}
     </ul>
 
-    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
-      <ThemeSwitcher className="mr-5" />
-    </div>
+<div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+  <div class="flex items-center space-x-4">
+    <Social source={social.main} className="social-icons" />
+    <ThemeSwitcher />
+  </div>
+</div>
+
   </nav>
 </header>

@@ -4,11 +4,6 @@
       "name": "instagram",
       "icon": "FaInstagram",
       "link": "https://www.instagram.com/tensaos_fc/"
-    },
-    {
-      "name": "github",
-      "icon": "FaGithub",
-      "link": "https://github.com/DiegoLangreo7/tensaos"
     }
   ]
 }
