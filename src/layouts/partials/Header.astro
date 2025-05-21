@@ -23,7 +23,8 @@ const { settings } = config;
 const { pathname } = Astro.url;
 ---
 
-<header class={`header z-30 ${settings.sticky_header && "sticky top-0"}`}>
+<header class={`header z-30 ${settings.sticky_header && "sticky top-0"}
+          bg-white/70 dark:bg-black/70 backdrop-blur`}>
   <nav class="navbar container">
     <div class="order-0">
       <Logo />
