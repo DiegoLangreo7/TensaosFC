@@ -165,9 +165,7 @@ const { title, meta_title, description, image, noindex, canonical } =
     <!-- og-image -->
     <meta
       property="og:image"
-      content={`${config.site.base_url}${
-        image ? image : config.metadata.meta_image
-      }`}
+      content={`${config.site.base_url}${image ?? config.metadata.meta_image}`}
     />
 
     <!-- twitter-image -->
