@@ -2,6 +2,6 @@
 # Banner
 banner:
   title: "Tensaos Club de Fútbol"
-  content: "No somos como vosotros, somos mejores."
+  content: "No hay color."
   image: "/images/banner.png"
 ---
