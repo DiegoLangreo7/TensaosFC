@@ -179,7 +179,7 @@ const { title, meta_title, description, image, noindex, canonical } =
     />
     <meta name="twitter:card" content="summary_large_image" />
   </head>
-  <body class="flex flex-col min-h-screen">
+  <body>
     {/* google tag manager noscript */}
     {
       config.google_tag_manager.enable && (
@@ -189,7 +189,7 @@ const { title, meta_title, description, image, noindex, canonical } =
 
     <TwSizeIndicator />
     <Header />
-    <main id="main-content" class="flex-grow">
+    <main id="main-content">
       <slot />
     </main>
     <Footer />
