@@ -20,18 +20,18 @@ const { title, description, meta_title, image } = about.data;
     <div class="container">
       <div class="row justify-center">
         <div class="text-center md:col-10 lg:col-7">
-          {
-            image && (
+          {image && (
+            <div class="mx-auto mb-6 w-48 h-48 rounded-full overflow-hidden">
               <ImageMod
-                class="mx-auto mb-6 rounded-lg"
+                class="w-full h-full object-cover"
                 src={image}
                 width={200}
                 height={200}
                 alt={title}
                 format="webp"
               />
-            )
-          }
+            </div>
+          )}
           <h2 set:html={markdownify(title)} class="h3 mb-6" />
           <div class="content">
             <Content />

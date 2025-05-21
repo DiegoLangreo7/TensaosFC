@@ -1,5 +1,5 @@
 .header {
-  @apply bg-body dark:bg-darkmode-body py-6;
+  @apply bg-white/80 dark:bg-transparent backdrop-blur shadow-md py-6;
 }
 
 /* navbar items */
