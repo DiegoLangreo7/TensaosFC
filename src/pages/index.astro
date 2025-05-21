@@ -1,5 +1,5 @@
 ---
-import ImageMod from "@/components/ImageMod.astro";
+import ShieldAnimation from "@/components/ShieldAnimation.astro";
 import Base from "@/layouts/Base.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import type { CollectionEntry } from "astro:content";
@@ -23,7 +23,7 @@ const { banner } = homepage.data as Homepage;
 
 <Base>
   <!-- Banner -->
-  <section class="section pt-14">
+  <section class="pt-14 pb-0">
     <div class="container">
       <div class="row justify-center">
         <div class="lg:col-7 md:col-9 mb-8 text-center">
@@ -33,19 +33,9 @@ const { banner } = homepage.data as Homepage;
           />
           <p set:html={markdownify(banner.content)} class="mb-8" />
         </div>
-        {
-          banner.image && (
-            <div class="col-12">
-              <ImageMod
-                src={banner.image}
-                height={380}
-                width={1200}
-                alt="banner"
-                format="webp"
-              />
-            </div>
-          )
-        }
+        <div class="col-12">
+          <ShieldAnimation />
+        </div>
       </div>
     </div>
   </section>
