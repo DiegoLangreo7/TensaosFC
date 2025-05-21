@@ -61,11 +61,22 @@ const homepageCollection = defineCollection({
   }),
 });
 
+// Sponsors collection schema
+const sponsorsCollection = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/sponsors" }),
+  schema: z.object({
+    name:    z.string(),
+    logo:    z.string(),
+    website: z.string().url()
+  }),
+});
+
 // Export collections
 export const collections = {
   // Pages
   homepage: homepageCollection,
   players: playersCollection,
   pages: pagesCollection,
-  about: aboutCollection
+  about: aboutCollection,
+  sponsors: sponsorsCollection
 };

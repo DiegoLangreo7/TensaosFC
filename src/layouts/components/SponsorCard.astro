@@ -1,0 +1,18 @@
+---
+export interface Props {
+  name: string;
+  logo: string;
+  website: string;
+}
+const { name, logo, website } = Astro.props as Props;
+---
+
+<a
+  href={website}
+  target="_blank"
+  rel="noopener"
+  class="flex flex-col items-center p-4 bg-light dark:bg-darkmode-light rounded-lg hover:shadow-lg transition"
+>
+  <img src={logo} alt={name} class="h-24 w-auto mb-4 object-contain" />
+  <span class="font-semibold text-center">{name}</span>
+</a>
