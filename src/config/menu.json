@@ -16,11 +16,5 @@
       "name": "Sobre nosotros",
       "url": "/about"
     }
-  ],
-  "footer": [
-    {
-      "name": "Politica de privacidad",
-      "url": "/privacy-policy"
-    }
   ]
 }
