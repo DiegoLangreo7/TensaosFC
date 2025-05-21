@@ -1,5 +1,26 @@
 ---
+// @ts-nocheck
 ---
-<div class="shield-animation">
-  <img src="/images/escudo.png" alt="Escudo del equipo" />
+<div class="shield-animation-wrapper">
+  <div class="shield-animation">
+    <img src="/images/escudo.png" alt="Escudo del equipo" />
+  </div>
 </div>
+
+<script type="module" client:load>
+  const wrapper = document.querySelector('.shield-animation-wrapper');
+  function createFlame() {
+    const flame = document.createElement('div');
+    flame.className = 'flame';
+    const size = Math.random() * 30 + 20;
+    flame.style.width  = `${size}px`;
+    flame.style.height = `${size}px`;
+    flame.style.top    = `${Math.random() * 100}%`;
+    flame.style.left   = `${Math.random() * 100}%`;
+    wrapper.appendChild(flame);
+    flame.addEventListener('animationend', () => flame.remove());
+  }
+  setInterval(() => {
+    if (Math.random() < 0.5) createFlame();
+  }, 700);
+</script>
