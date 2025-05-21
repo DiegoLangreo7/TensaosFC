@@ -1,7 +1,7 @@
 ---
 title: "Tensaos Club de Fútbol"
-meta_title: "About"
-description: "this is meta description"
+meta_title: "¿Quiénes somos?"
+description: "Que es tensaos y que representa."
 image: "/images/escudo.png"
 draft: false
 ---
