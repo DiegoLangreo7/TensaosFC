@@ -1,4 +1,3 @@
-<!-- readme.txt -->
 <h1>Tensaos FC Website</h1>
 
 <img src="public/images/escudo.png" alt="Logo de Tensaos FC">
@@ -35,7 +34,7 @@
 <h2>Contacto</h2>
 <ul>
   <li>Club: <a href="https://www.instagram.com/tensaos_fc/">@tensaos_fc</a></li>
-  <li>Devops: <a href="https://github.com/DiegoLangreo7">DiegoLangreo7</a></li>
+  <li>DevOps: <a href="https://github.com/DiegoLangreo7">DiegoLangreo7</a></li>
 </ul>
 
 <h2>Patrocinadores</h2>
