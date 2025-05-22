@@ -34,7 +34,7 @@
 
 <h2>Contacto</h2>
 <ul>
-  <li>Club: <a href="https://instagram.com/TensaosFC">@TensaosFC</a></li>
+  <li>Club: <a href="https://www.instagram.com/tensaos_fc/">@tensaos_fc</a></li>
   <li>Devops: <a href="https://github.com/DiegoLangreo7">DiegoLangreo7</a></li>
 </ul>
 
